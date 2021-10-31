@@ -1,0 +1,687 @@
+.top-nav,
+.header {
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+}
+
+.header {
+  top: 0;
+}
+.user-logged-in {
+  .header {
+    top: 79px;
+  }
+}
+
+#page-title {
+  position: fixed;
+  width: 80%;
+  @extend %responsive-padding;
+
+  h1 {
+    margin-top: 120px;
+    text-shadow: 2px 1px 10px rgb(66, 63, 76);
+    color: #faf9f7;
+
+    @media (min-width: 768px) {
+      margin-top: 150px;
+    }
+  }
+
+  &.user-logged-in {
+    h1 {
+      margin-top: 188px;
+    }
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+}
+
+.top-message {
+  text-align: center;
+}
+
+.topwidget {
+  text-align: center;
+
+  .fa,
+  .fas {
+    font-size: 3em;
+  }
+
+  .topwidget-list .region .block {
+    position: relative;
+    background: #fff;
+    padding: 20px 20px;
+    margin-bottom: 30px;
+    border: 1px solid #eee;
+    @include transition(all 0.5s);
+
+    &:hover {
+      background: #ffd9d9;
+      color: #000;
+      transform: scale(1.1);
+    }
+
+    h2 {
+      margin-bottom: 5px;
+    }
+
+    p:last-child {
+      margin: 0;
+    }
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+
+    li {
+      list-style: none;
+      padding-bottom: 6px;
+      margin-bottom: 6px;
+      border-bottom: 1px solid #dddddd42;
+    }
+  }
+}
+
+// blogs
+.path-travel-stories {
+  .main-content {
+    padding: 170px 30px;
+    @media (min-width: 1200px) {
+      padding: 200px 100px;
+    }
+  }
+}
+.travel-stories {
+  .layout__region.layout__region--content {
+    .field--name-field-main-page-image.field--type-image {
+      float: left;
+      margin-right: 4%;
+      width: 100%;
+
+      @media (min-width: 600px) {
+        width: auto;
+      }
+    }
+    img.image-style-thumbnail-300x150 {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .field--name-strapline {
+    @extend %large-body;
+  }
+}
+
+// Contact page
+.contact-message-feedback-form {
+  margin: 0 auto;
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  padding: 20px 30px;
+}
+
+.contact-message-feedback-form {
+  .form-text,
+  .form-email,
+  .form-textarea {
+    width: 100%;
+  }
+}
+
+// User Login Form
+.user-login-form,
+.user-form,
+.user-pass {
+  max-width: 500px;
+  margin: 40px auto;
+  border: 1px solid #e6e6e6;
+  padding: 5px 20px;
+  background: #fdfdfd;
+
+  .form-text,
+  .form-email {
+    width: 100%;
+  }
+}
+
+.form-composite > .fieldset-wrapper > .description,
+.form-item .description {
+  color: #999;
+  font-style: italic;
+}
+
+// Maintenance
+.maintenance-page {
+  background: image-url("maintenance-bg.png") #66cbff center no-repeat;
+  color: #fff;
+  text-align: center;
+  padding-top: 220px;
+  padding-bottom: 100px;
+  color: #000;
+
+  .brand,
+  .name-and-slogan {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .site-name a {
+    color: #404040;
+  }
+
+  .site-slogan,
+  .name-and-slogan {
+    display: none;
+  }
+}
+
+.maintenance-msg {
+  margin: 20px 0;
+  padding: 20px 30px;
+  display: inline-block;
+  color: #404040;
+  border: 1px solid #fff;
+  background: rgb(242, 244, 207);
+  background: rgba(242, 244, 207, 0.88);
+  @include box-shadow(5px 5px 0px #fff);
+
+  h1 {
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+}
+
+// Profile Page
+.path-user {
+  .profile {
+    > div {
+      display: inline-block;
+    }
+
+    .label {
+      display: block;
+      color: #333;
+    }
+  }
+}
+
+// Node type page styles
+.page-node-type-mini-tour,
+.page-node-type-tour {
+  .field--name-field-difficulty {
+    @include float-right-fixed(190px);
+    text-align: right;
+  }
+  &.user-logged-in {
+    .field--name-field-difficulty {
+      top: 270px;
+    }
+  }
+  .field--name-field-image {
+    background: $bodyBGColor;
+    @extend %responsive-padding;
+  }
+}
+.taxonomy-term.vocabulary-tour-type,
+.page-node-type-mini-tour,
+.page-node-type-tour,
+.page-node-type-page {
+  .node__content {
+    min-height: 80vh;
+    padding-top: 70px;
+  }
+  .main-content {
+    padding: 0;
+  }
+
+  .messages.messages--status {
+    position: fixed;
+    top: 370px;
+    display: none;
+    @extend %responsive-padding;
+  }
+
+  &.user-logged-in {
+    .messages.messages--status {
+      display: block;
+    }
+  }
+
+  .field--name-field-difficulty {
+    max-width: 20%;
+
+    @media (min-width: 980px) {
+      max-width: 15%;
+    }
+    @media (min-width: 1200px) {
+      max-width: 10%;
+    }
+  }
+
+  .field--name-field-symbol {
+    @include float-right-fixed(230px);
+    display: flex;
+
+    img {
+      margin: 0 auto;
+      display: block;
+      // border: 2px solid $linkColorHoverLight;
+      width: 70px;
+      height: auto;
+      @include border-radius($radiusSmall);
+    }
+  }
+
+  &.user-logged-in {
+    .field--name-field-symbol {
+      top: 304px;
+    }
+  }
+
+  .field--name-field-tour-type {
+    position: fixed;
+    @extend %responsive-padding;
+    top: 130px;
+    display: none;
+  }
+  &.user-logged-in {
+    .field--name-field-tour-type {
+      top: 180px;
+    }
+  }
+  .field--name-field-main-page-image,
+  .field--name-field-main-image {
+    @extend %main-static-image;
+    top: 74px;
+    @media (min-width: 768px) {
+      top: 90px;
+    }
+  }
+  &.user-logged-in {
+    .field--name-field-main-page-image,
+    .field--name-field-main-image {
+      top: 132%;
+      @media (min-width: 768px) {
+        top: 162px;
+      }
+    }
+  }
+  .field.field--name-body {
+    margin-top: 60%;
+    @media (min-width: 980px) {
+      margin-top: 50%;
+    }
+    @media (min-width: 1400px) {
+      margin-top: 40%;
+    }
+  }
+  &.user-logged-in {
+    .field.field--name-body {
+      margin-top: 74%;
+      @media (min-width: 980px) {
+        margin-top: 54%;
+      }
+      @media (min-width: 1400px) {
+        margin-top: 44%;
+      }
+    }
+  }
+
+  .field--name-field-image-content .field__item {
+    &:nth-of-type(odd) .field--name-field-image {
+      float: right;
+      margin-left: 3%;
+      margin-right: 0%;
+      margin-bottom: 2%;
+      @media (min-width: 768px) {
+        margin-right: 5%;
+      }
+    }
+    &:nth-of-type(even) .field--name-field-image {
+      float: left;
+      margin-right: 3%;
+      margin-left: 0%;
+      margin-bottom: 2%;
+      @media (min-width: 768px) {
+        margin-left: 3%;
+      }
+    }
+  }
+
+  .field--name-field-region {
+    position: fixed;
+    top: 84px;
+    font-size: 2.4em;
+    z-index: -1;
+    margin-left: -12px;
+    text-shadow: 2px 1px 10px rgb(66, 63, 76);
+    color: #faf9f7;
+
+    @extend %responsive-padding;
+
+    @media (min-width: 768px) {
+      top: 108px;
+    }
+  }
+
+  &.user-logged-in {
+    .field--name-field-region {
+      top: 190px;
+    }
+  }
+
+  .region-wrapper {
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+
+    .field {
+      font-size: 1.3em;
+    }
+  }
+  .field--name-field-trip-length- {
+    position: absolute;
+    margin: 0 auto;
+    width: max-content;
+    left: 0;
+    right: 0;
+    font-size: 1.3em;
+    line-height: 0.4em;
+  }
+  .field--type-text-long,
+  .field.field--name-body,
+  .field--name-field-image-content,
+  .field-group-accordion-wrapper {
+    background: $bodyBGColor;
+    @extend %responsive-padding;
+  }
+  .block {
+    margin-bottom: 0;
+  }
+  .field--name-description,
+  .field--name-body {
+    @extend %large-body;
+  }
+  .form-item--error-message {
+    font-size: 0.8em;
+    color: $alertFontColor;
+  }
+  .field--name-field-itinerary-footnote {
+    background: $linkColorHover;
+    color: $bodyBGColor;
+    @include border-radius($radiusLarge $radiusLarge);
+  }
+  .field--name-field-itinerary-footnote,
+  .field.field--name-field-itinerary {
+    width: 100%;
+    margin: 0 auto;
+
+    @media (min-width: 980px) {
+      width: 94%;
+    }
+  }
+
+  .paragraph--type--itinerary {
+    .field--name-field-itinerary-title {
+      background: $linkColorHover;
+      padding: $regPad $medPad;
+      color: $bodyBGColor;
+      font-size: 1.1em;
+      @include border-radius($radiusLarge $radiusLarge 0 0);
+
+      @media (min-width: 980px) {
+        font-size: 1.2em;
+      }
+    }
+    .field--name-field-itinerary-footnote {
+      padding: $regPad;
+      margin-bottom: 1%;
+    }
+    .field--name-field-itinerary-outline {
+      background: $linkColorBackgroundFaint;
+      padding: $medPad $regPad $regPad;
+      margin-bottom: 1%;
+      @include border-radius(0 0 $radiusLarge $radiusLarge);
+
+      p {
+        font-size: 1em;
+      }
+
+      @media (min-width: 980px) {
+        padding: $medPad;
+      }
+    }
+  }
+
+  .ui-accordion .ui-accordion-header {
+    @extend %custom-button;
+    width: 100%;
+    margin: 1% auto;
+
+    .ui-icon {
+      background-image: url(../../../core/assets/vendor/jquery.ui/themes/base/images/ui-icons_ffffff_256x240.png);
+    }
+
+    @media (min-width: 980px) {
+      width: 27%;
+    }
+  }
+
+  .ui-accordion .ui-accordion-content {
+    background: transparent;
+    padding: 2.2em 0 0;
+    border: 0;
+  }
+
+  .field--name-field-enquiry-form-mini,
+  .field--name-field-enquiry-webform {
+    width: 100%;
+    margin: 1% auto;
+    background-color: $linkColorBackgroundFaint;
+    padding: 10%;
+    @include border-radius($radiusLarge);
+
+    @media (min-width: 980px) {
+      width: 94%;
+    }
+
+    #edit-choose-mini-breaks input {
+      float: left;
+      margin: 0 10px;
+    }
+  }
+  .form-type-date.js-form-item-start-date.form-item-start-date,
+  .form-type-date.js-form-item-end-date.form-item-end-date,
+  .form-type-number.js-form-item-people.form-item-people,
+  .form-type-select.js-form-item-flexible-dates.form-item-flexible-dates {
+    float: left;
+    margin-right: 3em;
+  }
+  .form-type-select.js-form-item-flexible-dates.form-item-flexible-dates {
+    clear: both;
+  }
+  .js-form-item-additional-information.form-item-additional-information {
+    display: inline-block;
+  }
+
+  .js-form-item-flexible-dates.form-item-flexible-dates {
+    @media (max-width: 980px) {
+      display: block;
+    }
+  }
+  .webform-options-display-side-by-side.form-radios {
+    label {
+      display: inline !important;
+      padding: 0 10px 0 4px;
+    }
+  }
+  .field--name-field-image {
+    display: flex;
+    flex-wrap: wrap;
+
+    .field__item {
+      justify-content: space-between;
+      margin: 20px auto;
+    }
+  }
+
+  .ui-dialog .ui-dialog-titlebar-close {
+    &:after {
+      content: "X" !important;
+      margin-top: -2px;
+      display: block;
+    }
+    &:focus {
+      outline: 0;
+    }
+  }
+}
+.page-node-type-mini-tour,
+.node--type-mini-tour {
+  .flag-mini-breaks-flags a {
+    @extend %custom-button-regular;
+  }
+  .action-unflag a {
+    background: #40b968;
+    outline: 1px solid #40b968;
+    outline-style: auto;
+    outline-offset: 2px;
+  }
+}
+.node--view-mode-teaser {
+  .flag-mini-breaks-flags,
+  .flag-mini-breaks-flags.flag-waiting .ajax-progress {
+    position: absolute;
+    right: 2%;
+    bottom: 3%;
+  }
+}
+
+.path-taxonomy,
+.node--type-mini-tour {
+  header {
+    width: 100%;
+  }
+  .views-element-container > div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .views-row {
+    flex: 0 96%;
+    margin: 20px auto;
+
+    @media (min-width: 980px) {
+      flex: 0 48%;
+    }
+    @media (min-width: 1400px) {
+      flex: 0 30%;
+    }
+    .node__links {
+      bottom: 0;
+      position: absolute;
+      ul {
+        padding-bottom: 0;
+      }
+    }
+  }
+  .main-content {
+    padding: 0;
+  }
+  a.feed-icon {
+    display: none;
+  }
+  #page-title {
+    position: relative;
+    h1 {
+      color: black;
+      text-shadow: none;
+    }
+  }
+  // .views-row {
+  //   @extend %responsive-padding;
+  // }
+  &.node--view-mode-teaser {
+    position: relative;
+    // background-image: linear-gradient(
+    //   to bottom,
+    //   $colorBackgroundFaint,
+    //   $colorBackgroundLight
+    // );
+    background: $linkColorBackgroundFaint;
+    padding: 1% 2% 18%;
+    border-radius: $radiusSmall;
+    height: 100%;
+    // border: 1px solid $colorBackgroundLight;
+    // margin-bottom: 1%;
+    // h2,
+    // .h2 {
+    //   max-width: 80%;
+    // }
+    ol,
+    ul {
+      padding-bottom: 1%;
+    }
+    .field.field--name-title {
+      max-width: 82%;
+      max-height: 40px;
+      display: block;
+    }
+    .flag-mini-breaks-flags a {
+      margin-bottom: 3%;
+      float: right;
+    }
+    .field--name-field-difficulty {
+      margin-bottom: 1%;
+      width: 30%;
+      // float: right;
+      // right: 2%;
+    }
+    .field--name-field-symbol {
+      display: flex;
+      float: right;
+      right: 2%;
+      clear: right;
+    }
+    .field__label {
+      text-indent: 0%;
+      margin-bottom: -31px;
+      padding: 4%;
+      // text-align: right;
+      display: none;
+    }
+    .field--name-field-main-image {
+      // margin-left: 3% !important;
+      // margin-right: 0 !important;
+      // float: right;
+
+      // @media (min-width: 767px) {
+      //   margin-right: 0 !important;
+      //   margin-left: 0 !important;
+      //   float: none;
+      // }
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    .field--name-field-trip-length- {
+      top: 22px;
+      right: 2%;
+      font-size: 1.3em;
+      line-height: 120%;
+      font-weight: 500;
+      position: absolute;
+      color: $buttonBackGround;
+    }
+  }
+}

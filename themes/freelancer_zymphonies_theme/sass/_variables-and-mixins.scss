@@ -1,0 +1,148 @@
+// Variables
+// steelblue #4682b4 and lightsteelblue
+$fontFamily: "Poppins", sans-serif;
+$titleFontFamily: "Poppins", sans-serif;
+$baseFontSize: 16px;
+$bodyBGColor: #faf9f7;
+$baseFontColor: #435a6b;
+$darkFontColor: #333;
+$alertFontColor: #b51616ba;
+
+// $titleBackground: #395579; // - old #d8cdae;
+$linkColor: rgba(57, 85, 121, 1); //#395579;
+$linkColorHover: rgba(57, 85, 121, 0.8);
+$linkColorHoverLight: rgba(57, 85, 121, 0.6);
+$linkColorBackgroundFaint: rgba(57, 85, 121, 0.1);
+$buttonBackGround: #47a165;
+$buttonBackGroundHover: #51b773;
+
+$colorBackgroundFaint: rgba(190, 160, 102, 0.1);
+$colorBackgroundLight: rgba(190, 160, 102, 0.3);
+
+$desktopMenuColor: #fff;
+$desktopMenuHover: #a3ddff;
+$desktopMenuDropDownBG: $baseFontColor;
+$desktopMenuDropDownText: #fff;
+$desktopMenuDropDownHover: #a3ddff;
+
+$mobileMenuBg: rgba(0, 0, 0, 0.8);
+$mobileMenuColor: #fff;
+$mobileMenuHover: #fff;
+$mobileMenuDropDownBG: "";
+$mobileMenuDropDownText: "";
+$mobileMenuDropDownHover: "";
+
+$regPad: 10px;
+$medPad: 20px;
+$radiusSmall: 3px;
+$radiusLarge: 7px;
+$titleWeight: 400;
+
+// Mixin
+@mixin globalButton() {
+  background: $buttonBackGround;
+  cursor: pointer;
+  color: $bodyBGColor;
+  border: 0;
+  padding: 14px 30px;
+  line-height: 100%;
+  margin-right: 2px;
+  display: inline-block;
+  font-weight: 400;
+  @include border-radius($radiusSmall);
+  @include transition(all 0.3s);
+}
+
+@mixin globalButtonHover() {
+  background: $buttonBackGroundHover;
+}
+
+%custom-button {
+  background: $buttonBackGround;
+  color: $bodyBGColor;
+  border: 0;
+  padding: 14px 30px;
+  line-height: 100%;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 1.2em;
+  @include border-radius($radiusSmall);
+  @include transition(all 0.3s);
+
+  a {
+    color: $bodyBGColor;
+  }
+
+  &:focus {
+    outline: 0;
+  }
+
+  &:hover,
+  &.ui-state-active {
+    background: $buttonBackGroundHover;
+  }
+
+  @media (min-width: 980px) {
+    font-size: 1.3em;
+  }
+}
+
+%custom-button-regular {
+  width: fit-content;
+  background: $buttonBackGround;
+  color: $bodyBGColor;
+  border: 0;
+  padding: 14px 30px;
+  line-height: 100%;
+  text-align: center;
+  font-weight: 400;
+  display: inline-block;
+  @include border-radius($radiusSmall);
+  @include transition(all 0.3s);
+
+  a {
+    color: $bodyBGColor;
+  }
+
+  &:focus {
+    outline: 0;
+  }
+
+  &:hover,
+  &.ui-state-active {
+    background: $buttonBackGroundHover;
+  }
+}
+
+%responsive-padding {
+  width: 100%;
+  padding: 30px;
+  @media (min-width: 980px) {
+    padding: 30px 10%;
+  }
+  @media (min-width: 1480px) {
+    padding: 30px 15%;
+  }
+}
+
+%main-static-image {
+  width: 100%;
+  position: fixed;
+  z-index: -1;
+  padding: 0 !important;
+  picture,
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@mixin float-right-fixed($top) {
+  position: fixed;
+  top: $top;
+  right: 30px;
+  z-index: -1;
+  @media (min-width: 980px) {
+    right: 10%;
+  }
+}
